@@ -1,0 +1,18 @@
+$dark: black;
+$pumpkin: #de6830;
+$color: #efeee9;
+$peach: #dc279c;
+$yellow: #fdff90;
+$brown: #3f2214;
+
+@mixin mobile {
+  @media (max-width:750px) {
+    @content;
+  }
+}
+
+@mixin table {
+  @media (max-width:880px) {
+    @content;
+  }
+}

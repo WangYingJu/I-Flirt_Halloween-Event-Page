@@ -1,0 +1,742 @@
+// uitli
+.pc-d-none {
+  display: none;
+  @include mobile() {
+    display: block;
+  }
+}
+.sp-d-none {
+  display: block;
+  @include mobile() {
+    display: none;
+  }
+}
+.nav {
+  position: relative;
+  font-size: 0.22rem;
+  padding: 0.2rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 0.32rem;
+  @include mobile() {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    font-size: 0.36rem;
+    gap: 0.24rem;
+  }
+  & li:first-child {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 60%;
+      border-radius: 1.5rem;
+      right: -0.32rem;
+      top: calc((100% - 60%) / 2);
+      background-color: #fff;
+    }
+  }
+  & li:nth-child(2){
+    margin-left: 0.32rem;
+  }
+  & li:nth-child(3){
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.16rem;
+  }
+  .logo {
+    width: 1.9rem;
+    @include mobile() {
+      width: 3rem;
+    }
+  }
+  .btn {
+    color: white;
+    background-color: $peach;
+    padding: 0.04rem 0.12rem;
+    border: 0.03rem solid $peach;
+    border-radius: 0.12rem;
+    display: flex;
+    align-items: center;
+    @include mobile() {
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 0.7rem;
+      padding: 0.06rem 0.06rem;
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+    .icon-size {
+      width: 0.24rem;
+      margin-right: 0.04rem;
+      @include mobile() {
+        width: 0.5rem;
+        margin-right: unset;
+      }
+    }
+  }
+  // 已登入時 .btn 加入 .active
+  .active {
+    background-color: unset;
+  }
+}
+.st {
+  margin: 0 auto 0.24rem auto;
+  @include mobile() {
+  margin: 0 auto 0.08rem auto;
+  }
+}
+.st-depiction {
+  font-family: "Noto Serif TC", serif;
+  font-weight: bold;
+  font-size: 0.28rem;
+  text-align: center;
+  padding: 3px;
+  margin: 0 auto 0.48rem auto;
+  border-top: 1px solid $peach;
+  border-bottom: 1px solid $peach;
+  width: 5rem;
+  position: relative;
+  @include table() {
+  margin: 0 auto 0.24rem auto;
+  }
+  @include mobile() {
+    font-size: 0.4rem;
+  }
+}
+.dec-leftTop {
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 0.6rem;
+}
+.dec-rightTop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  width: 0.6rem;
+}
+.dec-leftBottom {
+  position: absolute;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  width: 0.6rem;
+}
+.dec-rightBottom {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  transform: translate(50%, -50%);
+  width: 0.6rem;
+}
+.squareRounded {
+  display: none;
+  width: 0.24rem;
+  height: 0.24rem;
+  &-topLeft {
+    border-top: 3px solid $peach;
+    border-left: 3px solid $peach;
+    border-top-left-radius: 0.15rem;
+    position: absolute;
+    top: -0.16rem;
+    left: -0.16rem;
+  }
+  &-topRight {
+    border-top: 3px solid $peach;
+    border-right: 3px solid $peach;
+    border-top-right-radius: 0.15rem;
+    position: absolute;
+    top: -0.16rem;
+    right: -0.16rem;
+  }
+  &-bottomLeft {
+    border-bottom: 3px solid $peach;
+    border-left: 3px solid $peach;
+    border-bottom-left-radius: 0.15rem;
+    position: absolute;
+    bottom: -0.16rem;
+    left: -0.16rem;
+  }
+  &-bottomRight {
+    border-bottom: 3px solid $peach;
+    border-right: 3px solid $peach;
+    border-bottom-right-radius: 0.15rem;
+    position: absolute;
+    bottom: -0.16rem;
+    right: -0.16rem;
+  }
+}
+.flag01 {
+  position: absolute;
+  background: url("../image/flag01.png") no-repeat right;
+  background-position: left top;
+  background-size: 10.17rem 2.85rem;
+  width: 10rem;
+  height: 2.85rem;
+  top: 0;
+  right: 0;
+  @include mobile() {
+    width: 4rem;
+  }
+}
+.flag02 {
+  position: absolute;
+  background: url("../image/flag02.png") no-repeat right;
+  background-position: right top;
+  background-size: 10.17rem 2.85rem;
+  width: 6.5rem;
+  height: 2.85rem;
+  top: 1.68rem;
+  @include mobile() {
+    display: none;
+  }
+}
+.flag03 {
+  position: absolute;
+  background: url("../image/flag01.png") no-repeat right;
+  background-position: left top;
+  background-size: 10.17rem 2.85rem;
+  width: 9.5rem;
+  height: 2.85rem;
+  bottom: -2rem;
+  right: 0;
+  @include mobile() {
+    background: url("../image/flag02.png") no-repeat left;
+    background-position: right top;
+    background-size: 10.17rem 2.85rem;
+    left: 0;
+    right: auto;
+    width: 4rem;
+  }
+}
+.flag04 {
+  position: absolute;
+  background: url("../image/flag02.png") no-repeat right;
+  background-position: right top;
+  background-size: 10.17rem 2.85rem;
+  width: 7.5rem;
+  height: 2.85rem;
+  top: -0.33rem;
+  transform: rotate(5deg);
+  @include mobile() {
+    background: url("../image/flag01.png") no-repeat left;
+    background-position: left top;
+    background-size: 10.17rem 2.85rem;
+    width: 4.5rem;
+    top: 0rem;
+    right: 0;
+    transform: unset;
+  }
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 9.38rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark;
+  @include mobile() {
+    background: url("../image/SP_01.jpg") no-repeat center;
+    background-size: 7.5rem 13.35rem;
+    width: 7.5rem;
+    height: 13.35rem;
+  }
+  .title {
+    position: absolute;
+    top: 2.2rem;
+    left: calc((19.2rem - 6.6rem) / 2);
+    width: 6.41rem;
+    animation: rubberBand 1s ease-in-out 3;
+    @include mobile() {
+      top: 3rem;
+      left: calc((7.5rem - 6.6rem) / 2);
+    }
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include mobile() {
+      display: none;
+    }
+  }
+  .parallax {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    div {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 9.38rem;
+      background-position: 0 50%;
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+    .one {
+      background-image: url("../image/layer05.png");
+      z-index: 4;
+    }
+    .two {
+      background-image: url("../image/layer04.png");
+      z-index: 3;
+      .ch01 {
+        position: absolute;
+        top: 2.5rem;
+        left: 4.8rem;
+        width: 1.74rem;
+        animation: bounce ease-out 5s infinite;
+        -webkit-animation: bounce ease-out 5s infinite;
+        -moz-animation: bounce ease-out 5s infinite;
+      }
+      .ch02 {
+        position: absolute;
+        top: 6.4rem;
+        right: 7rem;
+        width: 2rem;
+        animation: bounce ease-out 4s infinite;
+        -webkit-animation: bounce ease-out 4s infinite;
+        -moz-animation: bounce ease-out 4s infinite;
+      }
+    }
+    .three {
+      background-image: url("../image/layer03.png");
+      z-index: 2;
+    }
+    .four {
+      background-image: url("../image/layer02.png");
+      z-index: 1;
+    }
+    .five {
+      background-image: url("../image/layer01.jpg");
+      z-index: 0;
+    }
+  }
+}
+
+.event {
+  position: relative;
+  width: 100%;
+  padding: 0.8rem 0;
+  margin-top: -0.1rem;
+  background: url("../image/PC_pattern.png") repeat center;
+  background-position: center top;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.08);
+  .frame {
+    width: 6.6rem;
+    height: auto;
+    margin: 0 auto;
+  }
+  .ch03 {
+    width: 4rem;
+    position: absolute;
+    top: 1.5rem;
+    right: 3.7rem;
+  }
+  .ch01 {
+    position: absolute;
+    top: 5rem;
+    left: 4.8rem;
+    width: 1.74rem;
+    animation: bounce ease-out 5s infinite;
+    -webkit-animation: bounce ease-out 5s infinite;
+    -moz-animation: bounce ease-out 5s infinite;
+  }
+  .ch04 {
+    width: 3rem;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 4rem;
+  }
+  .ch02 {
+    position: absolute;
+    top: 4rem;
+    right: 5rem;
+    width: 2rem;
+    animation: bounce ease-out 4s infinite;
+    -webkit-animation: bounce ease-out 4s infinite;
+    -moz-animation: bounce ease-out 4s infinite;
+  }
+  .ch05 {
+    width: 3.5rem;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 4.5rem;
+  }
+  .container {
+    width: 5rem;
+    position: absolute;
+    z-index: 1;
+    top: 2.4rem;
+    left: calc((19.2rem - 5rem) / 2);
+    @include mobile() {
+      left: calc((7.5rem - 5rem) / 2);
+    }
+    .st01 {
+      width: 3.8rem;
+      @include mobile() {
+      width: 7.74rem;
+      }
+    }
+    .st02 {
+      width: 3.84rem;
+      @include mobile() {
+        width: 4.8rem;
+        }
+    }
+    .list {
+      font-size: 0.2rem;
+      margin-bottom: 0.32rem;
+      @include table() {
+      margin-bottom: 0.16rem;
+      }
+      @include mobile() {
+        font-size: 0.36rem;
+      }
+      span {
+        color: $pumpkin;
+      }
+      li + li {
+        margin-top: 0.24rem;
+      }
+    }
+    .list-content{
+      list-style-type: decimal;
+      margin-left: 0.24rem;
+      @include mobile() {
+      margin-left: 0.42rem;
+      }
+    }
+    .gift {
+      display: flex;
+      justify-content: center;
+      margin-left: -0.3rem;
+      @include mobile() {
+        margin-left: -0.5rem;
+      }
+      img {
+        width: 2rem;
+        margin-top: 0.24rem;
+        margin-bottom: 0.24rem;
+        @include table() {
+          margin-top: 0.08rem;
+          margin-bottom: 0.08rem;
+        }
+        @include mobile() {
+          width: 2.8rem;
+        }
+      }
+    }
+    .count {
+      font-size: 0.36rem;
+      text-align: center;
+      margin-bottom: 0.24rem;
+      @include table() {
+        margin-bottom: 0.16rem;
+      }
+      span {
+        font-size: 0.5rem;
+        font-weight: bold;
+        color: $peach;
+      }
+    }
+    .magic {
+      display: block;
+      margin-bottom: 0.32rem;
+    }
+    .btn {
+      display: flex;
+      justify-content: center;
+      gap: 0.16rem;
+      a {
+        width: 50%;
+        font-size: 0.28rem;
+        text-align: center;
+        color: $color;
+        padding: 0.08rem;
+        border: 0.03rem solid $peach;
+        &:hover {
+          background-color: $peach;
+        }
+      }
+    }
+  }
+}
+
+.prize {
+  padding: 0.8rem 0;
+  .st03 {
+    width: 2.3rem;
+    @include mobile() {
+      width: 3.45rem;
+      }
+  }
+  .container {
+    width: 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.32rem;
+    margin: 0 auto;
+    @include table() {
+      width: 14rem;
+    }
+    @include mobile() {
+      width: 6.5rem;
+    }
+  }
+  .prize-items {
+    width: 20%;
+    border-radius: 0.1rem;
+    position: relative;
+    @include mobile() {
+      width: 45%;
+      border-radius: 0.2rem;
+    }
+    &:after {
+      transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.1rem;
+      border-radius: 0 0 0.1rem 0.1rem;
+      background-color: $peach;
+      content: '';
+      -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+      transform: scaleX(0);
+      transform-origin: bottom left; //TIP point
+      @include mobile() {
+        height: 0.15rem;
+      border-radius: 0 0 0.2rem 0.2rem;
+      }
+    }
+    &:hover {
+      .mask {
+        height: 100%;
+        h2, p {
+          opacity: 1;
+        }
+      }
+      &:after{
+        -webkit-transform-origin: bottom left; //TIP point
+        -ms-transform-origin: bottom left;
+        transform-origin: bottom left;
+        transform: scaleX(1);
+      }
+      .squareRounded {
+        display: block;
+      }
+    }
+    .mask {
+      width: 100%;
+      height: 0%;
+      background-color: rgba(0, 0, 0, 0.9);
+      border-radius: 0.09rem;
+      position: absolute;
+      bottom: 0;
+      transition: all 0.5s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      @include mobile() {
+        border-radius: 0.18rem;
+      }
+      h2 {
+        font-size: 0.22rem;
+        font-weight: bold;
+        word-break: keep-all;
+        text-align: center;
+        color: $peach;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        @include mobile() {
+          font-size: 0.30rem;
+        }
+      }
+      p {
+        font-size: 0.2rem;
+        line-height: 1;
+        text-align: center;
+        color: white;
+        margin-bottom: 0.2rem;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        @include mobile() {
+          font-size: 0.28rem;
+          margin-bottom: 0.4rem;
+        }
+      }
+    }
+    .prize-img {
+      border-radius: 0.1rem;
+      @include mobile() {
+      border-radius: 0.2rem;
+      }
+    }
+  }
+}
+
+.note {
+  padding: 0.8rem 0;
+  width: 100%;
+  background: url("../image/PC_footer.jpg") no-repeat center;
+  background-position: center top;
+  background-size: cover;
+  /* width */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $peach;
+  }
+  .st04 {
+    width: 1.8rem;
+    margin-bottom: 0.08rem;
+    @include mobile() {
+      width: 2.7rem;
+    }
+  }
+  .container {
+    width: 10rem;
+    padding: 8px;
+    margin: 0 auto;
+    border-top: 1px solid $peach;
+    border-bottom: 1px solid $peach;
+    position: relative;
+    @include mobile() {
+      width: 6.5rem;
+    }
+  }
+  .list {
+    height: 3rem;
+    font-size: 0.18rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 8px;
+    margin: 0.2rem;
+    @include mobile() {
+      height: 5rem;
+      font-size: 0.28rem;
+    }
+    li {
+      list-style-type: decimal;
+      margin-left: 0.32rem;
+    }
+    span {
+      color: $pumpkin;
+    }
+    a {
+      text-decoration: underline $pumpkin;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+}
+
+.footer {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  background-color: $peach;
+  color: $color;
+  .container {
+    width: 14rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mobile() {
+      width: 6.5rem;
+      flex-direction: column;
+      gap: 0.64rem;
+    }
+    .a-i-c {
+      display: flex;
+      align-items: center;
+      @include mobile() {
+        flex-direction: column;
+        gap: 0.32rem;
+      }
+      .ican-logo {
+        width: 1.5rem;
+        @include mobile() {
+          width: 2.5rem;
+        }
+      }
+      .all-right {
+        font-size: 0.12rem;
+        line-height: 1.2;
+        margin-left: 0.4rem;
+        @include mobile() {
+          font-size: 0.24rem;
+          margin-left: unset;
+          margin-top: -0.32rem;
+        }
+      }
+      .age15 {
+        width: 0.7rem;
+        @include mobile() {
+          width: 1rem;
+        }
+      }
+      .note-15 {
+        width: 7rem;
+        font-size: 0.12rem;
+        line-height: 1.2;
+        list-style: disc;
+        margin-left: 0.4rem;
+        @include mobile() {
+          width: 5rem;
+          font-size: 0.24rem;
+        }
+      }
+    }
+  }
+}
+
+.breath {
+  width: 100%;
+  min-height: 4rem;
+}
+
+@keyframes rubberBand {
+  0%{
+    transform: scale3d(1,1,1)
+  }
+  35%{
+    transform: scale3d(1.1,0.8,1)
+  }
+  45%{
+    transform: scale3d(0.75,1,1)
+  }
+  60%{
+    transform: scale3d(1.15,0.8,1)
+  }
+  75%{
+    transform: scale3d(1.05,0.95,1)
+  }
+  10%{
+    transform: scale3d(1,1,1)
+  }
+}

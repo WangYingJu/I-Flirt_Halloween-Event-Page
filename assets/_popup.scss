@@ -1,0 +1,219 @@
+/* popup基本預設設定 不用動 */
+.popup-wrap {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  content: "";
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 100;
+}
+
+.popup-box {
+  width: 100%;
+  transform: translate(-50%, -50%) scale(1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* 自己的popup樣式 */
+.pop-body {
+  position: relative;
+  .viedo-body {
+    width: 9.6rem;
+    height: 5.4rem;
+    margin: 0 auto;
+    @include mobile() {
+      width: 5.4rem;
+      height: 9.6rem;
+    }
+  }
+  .video {
+    width: 100%;
+  }
+  .pop-bg {
+    margin: 0 auto;
+    width: 7.3rem;
+  }
+  .smaller {
+    margin: 0 auto;
+    width: 6rem;
+  }
+  .content {
+    width: 5.5rem;
+    position: absolute;
+    z-index: 1;
+    top: 0.5rem;
+    left: calc(50% - (5.5rem / 2));
+    text-align: center;
+    @include mobile() {
+      width: 6rem;
+      left: calc(50% - (6rem / 2));
+    }
+  }
+  h2 {
+    font-size: 0.36rem;
+    font-weight: bold;
+    color: $pumpkin;
+    padding-bottom: 0.08rem;
+    border-bottom: 0.02rem solid $brown;
+    margin-bottom: 0.24rem;
+    @include mobile() {
+      font-size: 0.4rem;
+      margin-bottom: 0.16rem;
+    }
+  }
+  h3 {
+    font-size: 0.32rem;
+    font-weight: bold;
+    color: $brown;
+    margin-bottom: 0.16rem;
+    @include mobile() {
+      font-size: 0.32rem;
+      margin-bottom: 0.08rem;
+    }
+  }
+  .margin-top {
+    margin-top: 0.8rem;
+  }
+  p {
+    font-size: 0.28rem;
+    color: $brown;
+    margin-bottom: 0.16rem;
+    @include mobile() {
+      font-size: 0.32rem;
+      margin-bottom: 0.08rem;
+    }
+    a {
+      color: $peach;
+      text-decoration: underline;
+    }
+  }
+  .notice {
+    font-size: 0.2rem;
+    text-align: center;
+    color: $pumpkin;
+    margin-bottom: 0.24rem;
+    @include mobile() {
+      font-size: 0.28rem;
+      margin-bottom: 0.16rem;
+    }
+  }
+  .table-list {
+    height: 2.5rem;
+    padding-right: 8px;
+    margin-bottom: 0.24rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    .table-bg {
+      background-color: rgba(63, 34, 20, 0.1);
+      padding: 0.08rem;
+    }
+    li + li {
+      margin-top: 0.16rem;
+    }
+  }
+  .table {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid $brown;
+    tr + tr {
+      border-top: 1px solid $brown;
+    }
+    &-items {
+      font-size: 0.28rem;
+      color: $brown;
+      display: flex;
+      & td:nth-child(1) {
+        min-width: 2rem;
+        padding: 0.08rem 0.16rem;
+        border-right: 1px solid $brown;
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+      & td:nth-child(2) {
+        width: 100%;
+        padding: 0.08rem 0.16rem;
+        word-wrap: break-word;
+        word-break: break-all;
+        text-align: left;
+      }
+      a {
+        color: $peach;
+        text-decoration: underline;
+      }
+    }
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(63, 34, 20, 0.1);
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $brown;
+  }
+}
+
+
+/* 關閉按鈕樣式 */
+.close-btn {
+  width: 0.6rem;
+  height: 0.6rem;
+  display: inline-block;
+  position: absolute;
+  top: -1.5rem;
+  right: calc(50% - 0.3rem);
+  border-radius: 100%;
+  transition: 0.5s;
+}
+
+.close-btn:hover {
+  transform: rotate(270deg);
+}
+
+.close-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.16rem;
+  a {
+    width: 35%;
+    font-size: 0.2rem;
+    letter-spacing: 2px;
+    color: $brown;
+    padding: 0.08rem 0.16rem;
+    border: 0.03rem solid $brown;
+    @include mobile() {
+    padding: 0.08rem 0.16rem;
+      font-size: 0.28rem;
+    }
+    &:hover {
+      color: $color;
+      background-color: $brown;
+    }
+  }
+}
+
+.transform-in,
+.transform-out {
+  display: block;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.transform-in {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.transform-out {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}
